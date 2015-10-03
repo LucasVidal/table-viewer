@@ -1,5 +1,13 @@
 require 'sinatra'
 
-get '/get-tables' do
-	"{ [] }"
+class App < Sinatra::Base
+
+  configure do
+    set :public_folder, "public"
+  end
+
+  get '/get-tables' do
+    erb :tables
+  end
+
 end
